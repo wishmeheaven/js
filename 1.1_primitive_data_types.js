@@ -1,11 +1,17 @@
-let a = "hello"
-let b = 2
-let c = {name: "Ran"}
-let d = true
-let e = null
-let f = undefined
-let g = Symbol("g")
 
-for (let i = 0; i < 7; i++) {
-    console.log(typeof arguments[i])
-}
+
+
+    let test = "hello"
+    console.log(test, typeof(test))
+    test = 2
+    console.log(test, typeof(test))
+    test = { name: "Ran" }
+    console.log(test, typeof(test))
+    test = true
+    console.log(test, typeof(test))
+    test = null
+    console.log(test, typeof(test))
+    test = undefined
+    console.log(test, typeof(test))
+    test = Symbol("g")
+    console.log(test, typeof(test))
