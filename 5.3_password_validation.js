@@ -16,6 +16,6 @@ function checkPass(password){
 }
 
 console.log(checkPass("asd4fRDd"))
-
-
+console.log(checkPass("asd545fd"))
 console.log(checkPass("asdF"))
+console.log(checkPass("asd54"))
