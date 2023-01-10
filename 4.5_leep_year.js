@@ -1,6 +1,6 @@
 // every year that is divisible by 4 is a leap year except for the
 // ones that are also divisible by 100 unless it is divisible by 400.
-// Example: 2012 is the leap year 2100 is not But 2400 is.
+// Example: 2012 i2s the leap year 2100 is not But 2400 is.
 
 
 const isLeapYear = (year) => {
