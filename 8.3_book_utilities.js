@@ -3,7 +3,11 @@ const book1 = {
     author: "George Orwell",
     yearPublished: 1984,
     latestEdition: 1984,
-    language: "English"
+    language: "English",
+    translation: {
+        language: [],
+        translator: []
+    }
 };
 
 const book2 = {
@@ -11,7 +15,11 @@ const book2 = {
     author: "Douglas Adams",
     yearPublished: 1979,
     latestEdition: 1979,
-    language: "English"
+    language: "English",
+    translation: {
+        language: [],
+        translator: []
+    }
 };
 
 const bookUtils = {
@@ -35,13 +43,23 @@ const bookUtils = {
         }
     }
     ,
-    setNewLanguage(book, newLang) {
-        if (newLang != book.language) {
-            book.language = newLang
-            return `${book.title} has been translated to ${book.language} language`
+    setNewLanguage(book, newLanguage) {
+        if (newLanguage != book.language) {
+            book.language = newLanguage
+            return `${book.title} has been published in ${book.language} language`
         } else {
             return `${book.title} has already been published in ${book.language} `
         }
+    },
+    setTranslation(book, language, translator) {
+        if (book.translation.language.includes(language) && book.translation.translator.includes(translator)){
+            return `${book.title} has already been translated to ${language} by ${translator}` 
+        } else {
+            book.translation.translator.push(translator)
+            book.translation.language.push(language)
+            return `${book.title} has new translation to ${language} by ${translator}`
+        }
+       
     }
 }
 
@@ -51,12 +69,17 @@ const bookUtils = {
 
 // + try give both books the same yearPublish
 // + try compare between a book to itself
-console.log(bookUtils.getFirstPublished(book1, book2))
+// console.log(bookUtils.getFirstPublished(book1, book2))
 
 // console.log(bookUtils.setNewEdition(book2, 1979))
 // console.log(bookUtils.setNewEdition(book1, 2020))
 // console.log(bookUtils.setNewEdition(book1, 1955))
 
-console.log(bookUtils.setNewLanguage(book2, "English"))
-console.log(bookUtils.setNewLanguage(book2, "German"))
-console.log(bookUtils.setNewLanguage(book1, "Swedish"))
+// console.log(bookUtils.setNewLanguage(book2, "English"))
+// console.log(bookUtils.setNewLanguage(book2, "German"))
+// console.log(bookUtils.setNewLanguage(book1, "Swedish"))
+
+// console.log(bookUtils.setTranslation(book1, "Hungarian","Hristo Stoychkov")) 
+// console.log(bookUtils.setTranslation(book2, "Italian", "Franchesco Totti")) 
+// console.log(bookUtils.setTranslation(book2, "Italian", "AlexanderDel Piero")) 
+// console.log(bookUtils.setTranslation(book2, "Italian", "Franchesco Totti")) 
