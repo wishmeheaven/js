@@ -1,13 +1,15 @@
 const book1 = {
     title: "Nineteen Eighty-Four",
     author: "George Orwell",
-    yearPublished: 1984
+    yearPublished: 1984,
+    latestEdition: 1984
 };
 
 const book2 = {
     title: "The Hitchhiker's Guide to the Galaxy",
     author: "Douglas Adams",
-    yearPublished: 1979
+    yearPublished: 1979,
+    latestEdition: 1979
 };
 
 const bookUtils = {
@@ -23,16 +25,26 @@ const bookUtils = {
         }
     },
     setNewEdition(book, latestEdition) {
-            this.latestEdition = book.yearPublished
-        if (latestEdition > this.latestEdition) {
-            this.latestEdition = latestEdition
-            return `${book.title} has been updated to ${this.latestEdition} edition`
+            // book.latestEdition = book.yearPublished
+        if (latestEdition > book.latestEdition) {
+            book.latestEdition = latestEdition
+            return `${book.title} has been updated to ${book.latestEdition} edition`
         } else {
-            this.latestEdition = book.yearPublished
-            return `${latestEdition} edition isn't newer than ${book.title}'s ${this.latestEdition} `
+            return `${latestEdition} edition isn't newer than ${book.title}'s ${book.latestEdition} `
         }
-    },
-    latestEdition: 0
+    }
+    // ,
+    // setLanguage(book, language) {
+    //     this.latestEdition = book.yearPublished
+    //     if (latestEdition > this.latestEdition) {
+    //         this.latestEdition = latestEdition
+    //         return `${book.title} has been updated to ${this.latestEdition} edition`
+    //     } else {
+    //         this.latestEdition = book.yearPublished
+    //         return `${latestEdition} edition isn't newer than ${book.title}'s ${this.latestEdition} `
+    //     }
+    // },
+    // language: English"
 }
 
 
