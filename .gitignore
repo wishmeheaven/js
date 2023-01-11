@@ -83,3 +83,19 @@ console.log(slicelyDone)
 let position = string.length - slicelyDone.length
 
 console.log(`the last occurrence of the word "${lastOccurrence}" is at index ${string.length-position}`)
+
+
+
+
+11.01.23
+
+         setNewEdition(someBook, editionYear) {
+            // if(someBook && editionYear) { 
+            //     return 'please enter the title of the book and the edition of the year'
+            // } else {
+
+                return editionYear >= someBook.yearPublished ?
+                editionYear : someBook.yearPublished
+            // }
+        }
+    }
