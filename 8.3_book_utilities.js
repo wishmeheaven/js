@@ -1,16 +1,13 @@
 const book1 = {
     title: "Nineteen Eighty-Four",
     author: "George Orwell",
-    yearPublished: 2000,
-    lastEdition: null
-
+    yearPublished: 1984
 };
 
 const book2 = {
     title: "The Hitchhiker's Guide to the Galaxy",
     author: "Douglas Adams",
-    yearPublished: 1979,
-    lastEdition: null
+    yearPublished: 1979
 };
 
 const bookUtils = {
@@ -24,20 +21,28 @@ const bookUtils = {
                     `${someOtherBook.title} published first (at ${someOtherBook.yearPublished})` :
                     `${someBook.title} published first (at ${someBook.yearPublished})`
         }
-    }, 
+    },
     setNewEdition(book, latestEdition) {
-        if (latestEdition >= book.lastEdition) {
-            book.lastEdition = latestEdition
-            return `${book.title} has been updated to ${latestEdition} edition`
+            this.latestEdition = book.yearPublished
+        if (latestEdition > this.latestEdition) {
+            this.latestEdition = latestEdition
+            return `${book.title} has been updated to ${this.latestEdition} edition`
         } else {
-            return `${latestEdition} edition is older than ${book.title}'s ${book.lastEdition} `
+            this.latestEdition = book.yearPublished
+            return `${latestEdition} edition isn't newer than ${book.title}'s ${this.latestEdition} `
         }
-    }
+    },
+    latestEdition: 0
 }
+
+
+
 
 
 // + try give both books the same yearPublish
 // + try compare between a book to itself
 console.log(bookUtils.getFirstPublished(book1, book2))
 
-console.log(bookUtils.setNewEdition(book1, 2001))
+console.log(bookUtils.setNewEdition(book2, 1979))
+console.log(bookUtils.setNewEdition(book1, 2020))
+console.log(bookUtils.setNewEdition(book1, 1955))
