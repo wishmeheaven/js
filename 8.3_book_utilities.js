@@ -2,14 +2,16 @@ const book1 = {
     title: "Nineteen Eighty-Four",
     author: "George Orwell",
     yearPublished: 1984,
-    latestEdition: 1984
+    latestEdition: 1984,
+    language: "English"
 };
 
 const book2 = {
     title: "The Hitchhiker's Guide to the Galaxy",
     author: "Douglas Adams",
     yearPublished: 1979,
-    latestEdition: 1979
+    latestEdition: 1979,
+    language: "English"
 };
 
 const bookUtils = {
@@ -25,26 +27,22 @@ const bookUtils = {
         }
     },
     setNewEdition(book, latestEdition) {
-            // book.latestEdition = book.yearPublished
-        if (latestEdition > book.latestEdition) {
-            book.latestEdition = latestEdition
+        if (latestEdition > book.language) {
+            book.language = latestEdition
             return `${book.title} has been updated to ${book.latestEdition} edition`
         } else {
             return `${latestEdition} edition isn't newer than ${book.title}'s ${book.latestEdition} `
         }
     }
-    // ,
-    // setLanguage(book, language) {
-    //     this.latestEdition = book.yearPublished
-    //     if (latestEdition > this.latestEdition) {
-    //         this.latestEdition = latestEdition
-    //         return `${book.title} has been updated to ${this.latestEdition} edition`
-    //     } else {
-    //         this.latestEdition = book.yearPublished
-    //         return `${latestEdition} edition isn't newer than ${book.title}'s ${this.latestEdition} `
-    //     }
-    // },
-    // language: English"
+    ,
+    setNewLanguage(book, newLang) {
+        if (newLang != book.language) {
+            book.language = newLang
+            return `${book.title} has been translated to ${book.language} language`
+        } else {
+            return `${book.title} has already been published in ${book.language} `
+        }
+    }
 }
 
 
@@ -55,6 +53,10 @@ const bookUtils = {
 // + try compare between a book to itself
 console.log(bookUtils.getFirstPublished(book1, book2))
 
-console.log(bookUtils.setNewEdition(book2, 1979))
-console.log(bookUtils.setNewEdition(book1, 2020))
-console.log(bookUtils.setNewEdition(book1, 1955))
+// console.log(bookUtils.setNewEdition(book2, 1979))
+// console.log(bookUtils.setNewEdition(book1, 2020))
+// console.log(bookUtils.setNewEdition(book1, 1955))
+
+console.log(bookUtils.setNewLanguage(book2, "English"))
+console.log(bookUtils.setNewLanguage(book2, "German"))
+console.log(bookUtils.setNewLanguage(book1, "Swedish"))
