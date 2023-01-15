@@ -3,17 +3,17 @@
  function countLetters(words) {
 
     let letters = words.join("").toLowerCase().split("")
-    console.log(letters)
+    // console.log(letters)
     let lettersCount = {}
 
     letters.forEach(letter => {
         if (lettersCount[letter]) {
+            // console.log("lettersCount[letter]", lettersCount[letter])
             lettersCount[letter]++
-            console.log(" lettersCount[letter]++" ,lettersCount[letter])
+            // console.log("lettersCount[letter]++" ,lettersCount[letter])
         } else {
             lettersCount[letter] = 1
-            console.log(" lettersCount[letter]" ,lettersCount[letter])
-
+            // console.log(" lettersCount[letter]" ,lettersCount[letter])
         }
     
     })
