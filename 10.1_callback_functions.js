@@ -13,23 +13,23 @@ isString("Stranger Things", myCallback);
 
 // ==========================================
 
-// function firstWordUpperCase(str, callback){
-//     let newStr = str.split(' ')
-//     let upperFirst = newStr[0].toUpperCase()
-//     newStr[0] = upperFirst
-//     return callback(newStr.join(' '))
-// }
+function firstWordUpperCase(str, callback){
+    let newStr = str.split(' ')
+    let upperFirst = newStr[0].toUpperCase()
+    newStr[0] = upperFirst
+    return callback(newStr)
+}
 
-// function dashBetweenWords(str){
-//     return str.join('-')
-// }
+function dashBetweenWords(str){
+    return str.join('-')
+}
 
-// console.log(firstWordUpperCase("Life is your last chance", dashBetweenWords))
+console.log(firstWordUpperCase("Life is your last chance", dashBetweenWords))
 
 // ============================================
 
 
-function firstWordUpperCase(str, callback) {
+function firstWordUpperCase2(str, callback) {
     let newStr = str.split(' ')
     let upperFirst = newStr[0].toUpperCase()
     newStr[0] = upperFirst
@@ -68,8 +68,25 @@ function toBetLang(str){
     return toBet
 }
 
-console.log(firstWordUpperCase("Life is your last chance, motherfucker", toBetLang))
-console.log(firstWordUpperCase("oh that's really cool", toBetLang))
+console.log(firstWordUpperCase2("Life is your last chance, motherfucker", toBetLang))
+console.log(firstWordUpperCase2("oh that's really cool", toBetLang))
 
 // ===============================
 
+function reversing(word, callback){
+    let reverse = ""
+    for(let i = word.length-1 ; i >= 0 ; i--) {
+        reverse += word[i]
+    }
+    callback(reverse)
+}
+
+function rebirth(reversed){
+    rebirth = ""
+    for (let i = reversed.length-1; i >=0 ;i--){
+        rebirth += reversed[i]
+    }
+    console.log(`a reversing ${reversed} will rebirth ${rebirth}`)
+}
+
+reversing("spectacular", rebirth) 
