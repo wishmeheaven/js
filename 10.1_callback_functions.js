@@ -46,15 +46,19 @@ function toBetLang(str){
 
             if (i == str.length-1) {
                 toBet += temp
-            } else if(str[i]==="o") {
+            } else if (str[i] == "o" && str[i - 1] == "o") {
+                temp = temp + "boo"
+            } else if(str[i]==="o" && str[i+1]!="o") {
                 temp = temp+"bo"
+            } else if (str[i] === "a" && str[i - 1] === "e") {
+                temp = temp + "bea"
             } else if(str[i]==="a") {
                 temp = temp+"ba"
             }else if(str[i]==="i") {
                 temp = temp+"bi"
             } else if(str[i]==="u" && str[i-1]!="o") {
                 temp = temp+"bu"    
-            } else if(str[i]==="e" && str[i+1]!=" " && str[i+1]!=="," && str[i+1]!==".") {
+            } else if(str[i]==="e" && str[i+1]!=" " && str[i+1]!=="," && str[i+1]!=="." && str[i+1]!=="a") {
                 temp = temp+"be"
             } else if (str[i]===' ' || i == str.length-1){
                 toBet += temp
@@ -65,5 +69,7 @@ function toBetLang(str){
 }
 
 console.log(firstWordUpperCase("Life is your last chance, motherfucker", toBetLang))
+console.log(firstWordUpperCase("oh that's really cool", toBetLang))
 
 // ===============================
+
