@@ -45,13 +45,14 @@ const school = {
 particular object of that person.
 */
 
-function findPerson(school, type, id){
-    for (let i = 0; i < school[type].length; i++){
-        if (school[type][i].id === id){
-            return school[type][i];
+function findPerson(type, id){
+    for (let i = 0; i < type.length; i++){
+        if (type[i].id === id){
+            return type[i];
         }
     }
 }
+console.log(findPerson(school.teachers,2))
 
 /*
 2. A method called “assignStudent” that takes two
