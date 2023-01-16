@@ -40,11 +40,17 @@ array. The returned array should only contain elements
 that are strings.*/
 
 function showFirstAndLast(arr){
-    
+    const newArr = []
 
+    arr.forEach(function (num,idx){
+
+        if(idx===0 || idx===arr.length-1)
+        newArr.push(num)
+    })
+    return newArr
 }
 
-
+console.log("showFirstAndLast", showFirstAndLast(numbers))
 
 
 
