@@ -4,7 +4,7 @@ array of integers and returns a new array with all the
 values in the array passed to the function doubled.*/
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-console.log("array: ",numbers)
+console.log("array",numbers)
 
 function doubleValues(arr){
     let newArr = []
@@ -13,7 +13,7 @@ function doubleValues(arr){
     })
     return newArr
 }
-console.log("doubleValues: ",doubleValues(numbers))
+console.log("doubleValues",doubleValues(numbers))
 
 /*
 2. Write a function called onlyEvenValues which accepts an
@@ -26,11 +26,9 @@ function onlyEvenValues(arr){
         if(num%2===0)
          newArr.push(num)
     })
-
-
     return newArr
 }
-console.log("onlyEvenValues: ", onlyEvenValues(numbers))
+console.log("onlyEvenValues", onlyEvenValues(numbers))
 
 /*
 3. Write a function called showFirstAndLast which accepts
@@ -49,14 +47,7 @@ function showFirstAndLast(arr){
     })
     return newArr
 }
-
 console.log("showFirstAndLast", showFirstAndLast(numbers))
-
-/*
-5. Write a function capitalize that takes a string as an
-argument and will return the whole string capitalized.
-*/
-
 
 /*
 4. Write a function called vowelCount which accepts a string
@@ -66,43 +57,44 @@ the string. The key should be the vowel and the value
 should be the count. e.g. {a:3, o:2,u:4}. Should not be
 case-sensitive. */
 
-const progRock = "The 70s were such an awesome"
-// times in the human race history"
+const progRock = "The 70s were such an awesome times in the human race history"
 
 function vowelCount(str) {
     const arrOfchars = str.split('')
-
     const vowelsObj = [{"a": 0} ,  {"e": 0} ,  {"i": 0} ,  {"o": 0} ,  {"u": 0}]
 
        vowelsObj.forEach(function(charAsKey) {
         arrOfchars.forEach(function(char){
-            console.log("charAsKey", charAsKey)
-
-            if (char === Object.keys(charAsKey).toString()){
+               if (char === Object.keys(charAsKey).toString()){
             // approaching the value
                 charAsKey[char] += 1
             }   
         })
     })
 
-    // CREATING A NEW OBJ with SPRED USE
+    // --- CREATING A NEW OBJ with SPRED USE
     // const aSingleObjBySpred = vowelsObj.reduce(function(acc, obj){ 
-    //     return {...acc, ...obj}
-    // } )
+    //     return {...acc, ...obj} // })
     // return aSingleObjBySpred
     
-    // CREATING A NEW OBJ with ASSIGN USE
+    // --- CREATING A NEW OBJ with ASSIGN USE
     const aSingleObjByAssign = vowelsObj.reduce(function(acc, obj){
-        return Object.assign(acc,obj)
-    })
-
+        return Object.assign(acc,obj)})
     return aSingleObjByAssign
 }
-
-console.log(vowelCount(progRock))
+console.log("number of vowels in string",vowelCount(progRock))
 
 
 // =========================================
+
+/*
+5. Write a function capitalize that takes a string as an
+argument and will return the whole string capitalized.
+*/
+function capitilize(str) {
+    return str.toUpperCase()
+}
+console.log(capitilize("what in the hack"))
 
 /*
 6. Write a function called shiftLetters that takes a string as an
