@@ -60,7 +60,7 @@ case-sensitive. */
 const progRock = "The 70s were such an awesome times in the human race history"
 
 function vowelCount(str) {
-    const arrOfchars = str.split('')
+    const arrOfchars = str.toLowerCase().split('')
     const vowelsObj = [{"a": 0} ,  {"e": 0} ,  {"i": 0} ,  {"o": 0} ,  {"u": 0}]
 
        vowelsObj.forEach(function(charAsKey) {
@@ -92,16 +92,46 @@ console.log("number of vowels in string",vowelCount(progRock))
 argument and will return the whole string capitalized.
 */
 function capitilize(str) {
-    return str.toUpperCase()
+
+    let arr = str.toLowerCase().split('')
+    let strCodes = []
+
+    arr.forEach(function(char){
+        if (char.charCodeAt(char) >= 62 && (char.charCodeAt(char) <=122))
+        strCodes.push(char.charCodeAt(char)-32)
+        else strCodes.push(char.charCodeAt(char))
+})
+    console.log(strCodes)
+
+    arr = []
+    strCodes.map(function(char){
+        arr.push(String.fromCharCode(char))
+    })
+    str = arr.join('')
+    console.log(str)
 }
-console.log(capitilize("what in the hack"))
+
+console.log(capitilize("What's the catch"))
 
 /*
 6. Write a function called shiftLetters that takes a string as an
 argument and return’s an encoded string with each letter
 shifted down the alphabet by one.*/
+function shiftLetters(str){
+    const arr = str.split('')
+    const strShifted = []
+    // let arr = str.toLowerCase().split('')
+    arr.map(function(char){
+
+        strShifted.push(String.fromCharCode(char.charCodeAt(char) - 1))
 
 
+    })
+    console.log(strShifted)
+    
+    
+}
+shiftLetters("What's the hack")
 
 /*
 7. Create a function called swapCase that takes a string as
