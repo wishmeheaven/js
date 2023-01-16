@@ -37,17 +37,29 @@ the first and last elements from the function’s argument
 array. The returned array should only contain elements
 that are strings.*/
 
+arrObj = [1,{num:0, str:"cool"},3,"lkjdas",{num:1,str:"word"},"what","other","another",434.,2,"Nd"]
+
 function showFirstAndLast(arr){
+    console.log("arr.join",arr.join(''))
     const newArr = []
-
-    arr.forEach(function (num,idx){
-
-        if(idx===0 || idx===arr.length-1)
-        newArr.push(num.toString())
+    arr.forEach(function (el,idx){
+        console.log("el1", el)
+        if(typeof(el)==='string'){
+            console.log("el2",el)
+            newArr.push(el)
+        }
     })
-    return newArr
+    arr = []
+    if(newArr.length > 0) {
+        arr.push(newArr[0])
+        if(newArr.length > 1)
+        {
+            arr.push(newArr[newArr.length-1])
+        }
+    }
+    return arr
 }
-console.log("showFirstAndLast", showFirstAndLast(numbers))
+console.log("showFirstAndLast", showFirstAndLast(arrObj))
 
 /*
 4. Write a function called vowelCount which accepts a string
@@ -123,11 +135,20 @@ function shiftLetters(str){
     // let arr = str.toLowerCase().split('')
     arr.map(function(char){
 
-        strShifted.push(String.fromCharCode(char.charCodeAt(char) - 1))
+        if(char!=="A" && char !=="a") {
+            if (char.charCodeAt(char) >= 62 && (char.charCodeAt(char) <= 122)) {
+            strShifted.push(String.fromCharCode(char.charCodeAt(char)-1))
+            } else {
+                strShifted.push(char)
+            }
+       } else {
+            if (char === "A") {
+            strShifted.push("Z")
+            } else strShifted.push("z")
 
+        }})
 
-    })
-    console.log(strShifted)
+    console.log(strShifted.join(''))
     
     
 }
