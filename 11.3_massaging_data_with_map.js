@@ -42,10 +42,10 @@ const data = [
 ];
 
 
-/*
-Create separate functions for each question below:
-1. Create a function that returns all the names from the array.
-*/
+
+/*Create separate functions for each question below:
+1. Create a function that returns all the names from the array.*/
+
 function getNames(arr){
     const newArr = []
     arr.forEach(function(el){
@@ -56,10 +56,10 @@ function getNames(arr){
 
 console.log("getNames",getNames(data))
 
-/*
-2. Create a function that returns all the objects that are born
-before 1990.
-*/
+
+/*2. Create a function that returns all the objects that are born
+before 1990.*/
+
 function getBeforeNinty(arr){
     let newArr = []
     let birthYear = []
@@ -78,14 +78,7 @@ console.log("getBeforeNinty", getBeforeNinty(data))
 3. Create a function that returns an object of all the different
 foods from all the objects as the key and the number of
 times that food is present in all the objects as the value
-*/
-function getFoodObjects(arr){
 
-
-
-}
-
-/*
 Example:
 {
 hamburgers: 3,
@@ -103,3 +96,42 @@ rooster: 1,
 anchovies: 1
 
 */
+
+
+console.log("getFoodCount",getFoodCount(data));
+
+function getFoodCount(arr){
+
+    let foodFish = []
+    let foodMeats = []
+
+    let teampArr = []
+    let allFoodObj = {}
+
+    for (let food of Object.keys(arr)) {
+        foodFish.push(arr[food].favoriteFoods.fish)
+        foodMeats.push(arr[food].favoriteFoods.meats)
+    }
+
+    foodFish.forEach(function(el){
+        el.forEach(function(el){
+            teampArr.push(el)
+        })
+    })
+     
+    foodMeats.forEach(function(el){
+        el.forEach(function(el){
+            teampArr.push(el)
+        })
+    })
+     
+    teampArr.forEach(function(el){
+        if (allFoodObj.hasOwnProperty(el)){
+            allFoodObj[el] += 1
+        } else {
+            allFoodObj[el] = 1
+        }
+    })
+
+    return allFoodObj  
+}
