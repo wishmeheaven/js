@@ -45,13 +45,17 @@ function showFirstAndLast(arr){
     arr.forEach(function (num,idx){
 
         if(idx===0 || idx===arr.length-1)
-        newArr.push(num)
+        newArr.push(num.toString())
     })
     return newArr
 }
 
 console.log("showFirstAndLast", showFirstAndLast(numbers))
 
+/*
+5. Write a function capitalize that takes a string as an
+argument and will return the whole string capitalized.
+*/
 
 
 /*
@@ -60,18 +64,56 @@ as an argument. The function should return an object
 which has the count of the number of vowels that are in
 the string. The key should be the vowel and the value
 should be the count. e.g. {a:3, o:2,u:4}. Should not be
-case-sensitive.
-5. Write a function capitalize that takes a string as an
-argument and will return the whole string capitalized.
+case-sensitive. */
+
+const progRock = "The 70s were such an awesome"
+// times in the human race history"
+
+function vowelCount(str) {
+    const arrOfchars = str.split('')
+
+    const vowelsObj = [{"a": 0} ,  {"e": 0} ,  {"i": 0} ,  {"o": 0} ,  {"u": 0}]
+
+       vowelsObj.forEach(function(charAsKey) {
+        arrOfchars.forEach(function(char){
+            console.log("charAsKey", charAsKey)
+
+            if (char === Object.keys(charAsKey).toString()){
+            // approaching the value
+                charAsKey[char] += 1
+            }   
+        })
+    })
+
+    // CREATING A NEW OBJ with SPRED USE
+    // const aSingleObjBySpred = vowelsObj.reduce(function(acc, obj){ 
+    //     return {...acc, ...obj}
+    // } )
+    // return aSingleObjBySpred
+    
+    // CREATING A NEW OBJ with ASSIGN USE
+    const aSingleObjByAssign = vowelsObj.reduce(function(acc, obj){
+        return Object.assign(acc,obj)
+    })
+
+    return aSingleObjByAssign
+}
+
+console.log(vowelCount(progRock))
+
+
+// =========================================
+
+/*
 6. Write a function called shiftLetters that takes a string as an
 argument and return’s an encoded string with each letter
-shifted down the alphabet by one.
+shifted down the alphabet by one.*/
+
+
+
+/*
 7. Create a function called swapCase that takes a string as
 an argument and returns a string that every other word is
 capitalized. (you can use the fifth’s exercise's function to
 keep it dry
-
-
-
-
 */
