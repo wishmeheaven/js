@@ -35,8 +35,10 @@ function getAvailableBooks(arr){
 }
 
 let availableBooks = getAvailableBooks(library)
-let displayBooks = "The available books in the library currently are: "
-for(let i = 0; i < availableBooks.length; i++){
-    displayBooks += `${availableBooks[i].title},${availableBooks[i].author}, ${availableBooks[i].readingStatus}'
+let displayBooks = ""
+for(let i = 0; i < availableBooks.length; i++) {
+    displayBooks += "The book '" + availableBooks[i].title +
+    "' which was written by " + availableBooks[i].author + 
+    (availableBooks[i].readingStatus ? " is " : " isn't ") + "available for reading.\n" 
 }
 console.log(displayBooks)
