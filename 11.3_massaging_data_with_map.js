@@ -94,18 +94,15 @@ chicken: 1,
 bird: 1,
 rooster: 1,
 anchovies: 1
-
 */
 
-
-console.log("getFoodCount",getFoodCount(data));
 
 function getFoodCount(arr){
 
     let foodFish = []
     let foodMeats = []
 
-    let teampArr = []
+    let tempArr = []
     let allFoodObj = {}
 
     for (let food of Object.keys(arr)) {
@@ -115,17 +112,17 @@ function getFoodCount(arr){
 
     foodFish.forEach(function(el){
         el.forEach(function(el){
-            teampArr.push(el)
+            tempArr.push(el)
         })
     })
      
     foodMeats.forEach(function(el){
         el.forEach(function(el){
-            teampArr.push(el)
+            tempArr.push(el)
         })
     })
-     
-    teampArr.forEach(function(el){
+
+    tempArr.forEach(function(el){
         if (allFoodObj.hasOwnProperty(el)){
             allFoodObj[el] += 1
         } else {
@@ -135,3 +132,5 @@ function getFoodCount(arr){
 
     return allFoodObj  
 }
+
+console.log("getFoodCount", getFoodCount(data));
