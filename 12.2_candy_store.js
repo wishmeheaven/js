@@ -73,6 +73,9 @@ function buy(candyStore, id){
         if (candyStore.candies[i].id === id){
             candyStore.cashRegister += candyStore.candies[i].price;
             candyStore.candies[i].amount -= 1;
-        }
+        }   
     }
 }
+console.log(candyStore.cashRegister);
+buy(candyStore, "g5e5m6");
+console.log(candyStore.cashRegister);
