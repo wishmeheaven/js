@@ -52,7 +52,7 @@ function findPerson(type, id){
         }
     }
 }
-console.log(findPerson(school.teachers,2))
+console.log("findPerson", findPerson(school.students,12))
 
 /*
 2. A method called “assignStudent” that takes two
@@ -62,6 +62,22 @@ subject and who is not in full capacity. If all of the teachers
 are in the full capacity log to the console “Sorry, no
 available teachers left”.
 */
+
+function assignStudent(id, subject){
+    for (let i = 0; i < school.teachers.length; i++){
+        if (school.teachers[i].subjects.includes(subject) && school.teachers[i].capacityLeft > 0){
+            school.teachers[i].students.push(findPerson(school.students, id));
+            school.teachers[i].capacityLeft--;
+            console.log(school.teachers[i].students)
+            return;
+        } else {
+            console.log("Sorry, no available teachers left");
+        }
+    }
+}
+
+assignStudent(12, "biology");
+
 
 /*
 3. A method called “assignTeachersSubject” that takes two
