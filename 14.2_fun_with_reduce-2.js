@@ -11,22 +11,41 @@ Write the following functions using the reduce built-in function.
 array of objects and a key and returns a new array with
 the value of each object at the key
 */
-for (const [key, value] of Object.entries(people)) {
-    console.log(`${key}: ${value}`)
+function extraOnlyValue(people, key){
+
+    const newArr = []
+
+    
+
+
+    return newArr
 }
-function extractOnlyValue(arr,keys){
+
+
+
+
+
+
+
+
+
+
+// for (const [key, value] of Object.entries(people)) {
+//     console.log(`${key}: ${value}`)
+// }
+// function extractOnlyValue(arr,keys){
    
 
-    console.log("hey", Object.entries(people[name], people.age))
-    arr.reduce((groupedPeople, person) => {
-    const age = person.keys
-    if (groupedPeople[age] == null) groupedPeople[age] = []
-    groupedPeople[age].push(person)
-    return groupedPeople
-    }, {})
-}
+//     console.log("hey", Object.entries(people[name], people.age))
+//     arr.reduce((groupedPeople, person) => {
+//     const age = person.keys
+//     if (groupedPeople[age] == null) groupedPeople[age] = []
+//     groupedPeople[age].push(person)
+//     return groupedPeople
+//     }, {})
+// }
 
-console.log(extractOnlyValue)
+// console.log(extractOnlyValue)
 
 /*
 2. Write a function called countOnlyVowels which accepts a

@@ -14,7 +14,7 @@ console.log(getSum([1, 2, 3],[5, 66, 23]))
     1. The first problem in the debugging process was displayed in line 3
  and indicate that arr1 is undefined
 
-    2. For the debugging purpose I use visual studio debugging extension of node
+    2. For the debugging purpose I use visual studio debugging extension of node and breakpoint
 
     3. continue of the debugging process (after question 1)
      - once I put "," between the 2 arrays that I send to the function

@@ -15,6 +15,7 @@ will return undefined because "a" it's not declare yet
 0- console.log(foo())
 will return 2 because zoo() was already initialized in the first run of the code
 ====================
+
 Block 2
 var fullName = 'John Doe';
 var obj = {
@@ -43,6 +44,7 @@ but no I think that because this variable already
 has been called 3 lines of code ago -
 it will return 'Aurelio De Rose'
 ====================
+
 Block 3 
 function funcB() {
 let a = b = 0;
@@ -89,7 +91,6 @@ console.log(e);
 (not sure)
 --- console.log(e) will return that d is undefined 
 because "e" is declared in a different scope and there isn't an access to it's value from the global scope
-
 
 =======================
 Block 6
