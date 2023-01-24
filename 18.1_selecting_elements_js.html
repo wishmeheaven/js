@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+    <title>Selecting Elements</title>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <p>Paragraph</p>
+    <a href="#">link</a>
+    <img src="" alt="" />
+    <div class="x">Div with a class</div>
+    <div id="y">Div with an id</div>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+  </body>
+  <script>
+    // 1. Select all elements not using the querySelector method.
+    const h1ByTagName = document.getElementsByTagName("h1");
+    const pByTagName = document.getElementsByTagName("p");
+    const aByTagName = document.getElementsByTagName("a");
+    const imgByTagName = document.getElementsByTagName("img");
+    const divByTagName = document.getElementsByTagName("div");
+    const inputByTagName = document.getElementsByTagName("input");
+    console.log("h1 by tag", h1ByTagName);
+    console.log("p by tag", pByTagName);
+    console.log("a by tag", aByTagName);
+    console.log("img by tag", imgByTagName);
+    console.log("div by tag", divByTagName);
+    console.log("input by tag", inputByTagName);
+
+// 2. Select all elements using querySelector method.   
+    const h1ByQuerySelector = document.querySelector("h1");
+    const pByQuerySelector = document.querySelector("p");
+    const aByQuerySelector = document.querySelector("a");
+    const imgByQuerySelector = document.querySelector("img");
+    const divByQuerySelector = document.querySelector("div");
+    const inputByQuerySelector = document.querySelector("input");
+    console.log("h1 by query selector", h1ByQuerySelector);
+    console.log("p by query selector", pByQuerySelector);
+    console.log("a by query selector", aByQuerySelector);
+    console.log("img by query selector", imgByQuerySelector);
+    console.log("div by query selector", divByQuerySelector);
+    console.log("input by query selector", inputByQuerySelector);
+
+/* 3. Select all inputs and iterate over them with the forEach
+method and print each one to the console. Using both
+querySelectorAll and getElementsByTagName */
+    const inputByTagNameAll = document.getElementsByTagName("input");
+    console.log("input by tag name all", inputByTagNameAll);
+    const inputByQuerySelectorAll = document.querySelectorAll("input");
+    console.log("input by query selector all", inputByQuerySelectorAll);
+    inputByTagNameAll.forEach((input) => {
+      console.log("input by tag name all", input);
+    });
+    inputByQuerySelectorAll.forEach((input) => {
+      console.log("input by query selector all", input);
+    });
+    
+
+     </script>
+</html>

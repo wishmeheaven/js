@@ -4,5 +4,6 @@
         "miny",
         "Oldboy",
         "slicely"
-    ]
+    ],
+    "terminal.integrated.fontFamily": "monospace"
 }
