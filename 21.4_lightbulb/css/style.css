@@ -4,10 +4,20 @@
     box-sizing: border-box;
 }
 
-body{
-    margin: 10rem auto;
+body {
 
+    width: 100vw;
+    height: 100vh;
     background-color: black;
+}
+
+#container div {
+    margin: 5rem auto;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
 }
 
 
