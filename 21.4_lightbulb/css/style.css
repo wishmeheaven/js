@@ -5,9 +5,9 @@
 }
 
 body{
-    margin-top: 10rem;
+    margin: 10rem auto;
+
     background-color: black;
-    display: flex;
 }
 
 
