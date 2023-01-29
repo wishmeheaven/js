@@ -2,19 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <script src="./app/app.js" defer></script>
-      <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Forms</title>
   </head>
   <body>
-    <div class="form">
-    <form id="info-form">
-        <input id="name" type="text" name="name" placeholder="Name" />
-        <input id="age"  type="number" name="age" placeholder="Age" />
-        <input id="email" type="email" name="email" placeholder="Email" />
-        <input id="submit" type="submit">
-    </form>
+    
+      <h3>Fill your details below</h3>
+      <form id="form">
+        <input type="text" placeholder="name" id="user-name"/>
+        <input type="number" placeholder="age" id="user-age"/>
+        <input type="text" placeholder="email" id="user-email"/>
+        <input type="submit" value="Submit" />
+      </form>
+    
+    <div class="confirm visible">
+      <h2 id="congrats" class="visible">“congratulations you successfully sent this form”</h2>
+      <p>Please confirm that the details are accurate</p>
+      <button id="confirm-btn" class="visible">Confirm</button>
+      </div>
+      <button id="change-btn" class="visible">Change</button>
     </div>
+    <script src="./app/app.js"></script>
+
   </body>
 </html>
