@@ -6,5 +6,6 @@
         "Oldboy",
         "slicely"
     ],
-    "terminal.integrated.fontFamily": "monospace"
+    "terminal.integrated.fontFamily": "monospace",
+    "liveServer.settings.port": 5501
 }
