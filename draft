@@ -61,3 +61,89 @@ if (confirm) {
     alert('Change information')
     submitForm()
 }
+======================================
+
+
+
+to try changing the button hover style
+manipulating the css variables with javascript
+FROM STACK OVERFLOW
+var css = 'table td:hover{ background-color: #00ff00 }';
+var style = document.createElement('style');
+
+if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+} else {
+    style.appendChild(document.createTextNode(css));
+}
+
+document.getElementsByTagName('head')[0].appendChild(style);
+
+
+const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+const randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+const input = document.querySelector("input");
+const message = document.querySelector(".message");
+const guesses = document.querySelector(".guesses");
+const endgame = document.querySelector(".endgame");
+const newGame = document.querySelector("#new-game-btn");
+const instruction = document.querySelector(".instruction");
+
+const randomColor = () => {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    // console.log("color",color);
+    return color;
+};
+let boxShadow = "inset 1px 1px 50px 1p " + randomColor()
+newGame.style.boxShadow = boxShadow
+
+const guessedLetters = [];
+let gameOver = false;
+console.log("randomLetter: ", randomLetter);
+message.style.color = "transparent";
+
+input.addEventListener("keyup", (e) => {
+    // if (gameOver) return;
+    if (e.key === "Enter") {
+        const guess = e.target.value;
+        if (guess.length !== 1) {
+        message.textContent = "Please enter a single letter";
+        message.style.color = "red";
+        return;
+        }
+        if (guessedLetters.includes(guess)) {
+        message.textContent = "You already guessed that letter";
+        message.style.color = "red";
+        return;
+        }
+        if (guess === randomLetter) {
+        message.textContent = "You are correct!";
+        message.style.color = "lightgreen";
+        endgame.classList.remove('hidden')
+        guesses.classList.add('hidden')
+        instruction.classList.add('hidden')
+        gameOver = true;
+        } else {
+        message.textContent = "You are wrong";
+        message.style.color = "red";
+        guessedLetters.push(guess);
+        guesses.textContent = guessedLetters.join(", ");
+        }
+        e.target.value = "";
+    }
+    }
+);
+
+newGame.addEventListener('click', () => {
+    window.location.reload()
+})
+
+
+
+
+
+
