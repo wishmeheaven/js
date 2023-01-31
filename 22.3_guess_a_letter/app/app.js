@@ -29,9 +29,11 @@ input.addEventListener("keyup", (e) => {
             return;
         }
         if (guess === randomLetter) {
-            secretLetter.textContent = randomLetter.toUpperCase();
-            message.textContent = "You are correct!";
-            message.style.color = "lightgreen";
+            secretLetter.textContent = randomLetter.toUpperCase()
+            secretLetter.style.boxShadow = "inset 0 0 20px 5px rgb(255, 0, 208)"
+            secretLetter.style.color = "rgb(255, 133, 254)"
+            message.textContent = "You are correct!"
+            message.style.color = "rgb(43, 255, 0)"
             endgame.classList.remove('hidden')
             guesses.classList.add('hidden')
             instruction.classList.add('hidden')
