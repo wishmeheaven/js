@@ -1,63 +1,41 @@
-'use strict'
+// 'use strict'
 
 
-
-function Fruit(name, color, taste, season) {
-    this.name = name
-    this.color = color
-    this.taste = [taste]
-    this.season = season
+if (displaySS[0] === '0' && displaySS[1] === '0') {
+    clock.style.boxShadow = `inset 1px 1px 15px 2px rgb(${randomColor}),
+        2px 2px 300px 10px rgb(${randomColor})`
+}
+if (displaySS % 10 === 0) {
+    clock.style.boxShadow = `inset 1px 1px 15px 2px rgb(${randomColor})`
 }
 
-const strawberry = new Fruit('strawberry', 'red', ['sweet'], 'spring')
-const grapefruit = new Fruit('grapefruit', 'greenish-yellow', ['bitter', 'sweet'], 'winter')
-const lemon = new Fruit('watermelon', 'green-red', ['sour'], 'summer')
-const pomegranate = new Fruit('pomegranate', 'red', ['sweet'], 'fall')
-const banana = new Fruit('banana', 'yellow', ['sweet'], 'summer')
-
-const fruits = [strawberry, grapefruit, lemon, pomegranate, banana]
-
-Fruit.prototype.myFilter = function (filterBy) {
-    console.log('in filter')
-    return fruits.filter((el) => {
-        return el.color.includes(filterBy)
-    })
+if (displaySS[0] === '0' && displaySS[1] === '0') {
+    setTimeout(function () {
+        clock.style.boxShadow = `inset -5px -50px 50px 1px rgb(${randomColor},
+                2px 2px 100px 30px rgb(${randomColor})`
+    }, 2000)
+}
+if (displaySS % 10 === 0) {
+    setTimeout(function () {
+        clock.style.boxShadow = `inset -5px -50px 50px 1px rgb(${randomColor})`;
+    }, 2000);
 }
 
-console.log(Fruit.prototype.myFilter('green'))
+// changing colors 
 
-Fruit.prototype.myFind = function (findBy) {
-    console.log('in find')
-    return fruits.find((el) => {
-        return el.color.includes(findBy)
-    })
-}
+// const randomColor = Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256)
 
-console.log(Fruit.prototype.myFind('red'))
+// Math.floor(Math.random() * 16777215).toString(16)
 
-Fruit.prototype.myReduce = function (acc, total) {
-    console.log('in reduce')
- 
-    let reduceLetters = fruits.reduce((acc, el) => {
-        console.log(acc, el.name, el.name.length)
-        return acc + el.name.length
-    }, 0)
-    return reduceLetters
-}
+// //moon glowing 
+// document.getElementById('clock').innerHTML = `${displayHH}:${displayMM}:${displaySS}`
 
-console.log(Fruit.prototype.myReduce(fruits))
-
-
-
-
-
-
-/*
-1. Build your own filter method with the help of prototypes
-2. Build your own find method with the help of prototypes
-Extra
-3. Build your own reduce method with the help of prototypes
-*/
+// if (displaySS % 10 === 0) {
+//     clock.style.boxShadow = `inset 1px 1px 20px 20px rgb(${randomColor})`
+// }
+// setTimeout(function () {
+//     clock.style.boxShadow = `inset -5px -50px 50px 1px rgb(${randomColor})`;
+// }, 1000);
 
 
 
@@ -69,203 +47,200 @@ Extra
 
 
 
+// /*
+// // Instructions
+// // You are given a function, Square, that takes four parameters, a,
+// // b, c, d, denoting the length of the square edges.
+// // Using prototype properties, add a method to Square named
+// // isSquare that prints true if a Square object has equal edges
+// // and false if they are unequal.
+// // Here is the Square function:*/
+
+
+// // function Square(a, b, c, d){
+// // this.a = a;
+// // this.b = b;
+// // this.c = c;
+// // this.d = d;
+// // }
+
+// // const square1 = new Square(20, 20, 20, 20)
+
+// // console.log(square1.hasOwnProperty('a'))
+
+// // Square.prototype.isSquare = function() {
+// //     this.a === this.b === this.c === this.d 
+// // }
+// // // console.log(square1.hasOwnProperty('isSquare'))
+// // // console.log(square1.isSquare(20, 20, 20, 20))
+// // console.log(square1)
 
 
 
-/*
+
+// // const square2 = new Square(20, 20, 21, 20)
+
+
+
+// // square1.Square.prototype.isSquare = function(){
+// //     this.a === this.b === this.c === this.d }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /*
 // Instructions
-// You are given a function, Square, that takes four parameters, a,
-// b, c, d, denoting the length of the square edges.
-// Using prototype properties, add a method to Square named
-// isSquare that prints true if a Square object has equal edges
-// and false if they are unequal.
-// Here is the Square function:*/
+// Create a webpage that has a form (asks the user for its name,
+// age, and email address) and when the user clicks submit, open
+// a text window that writes all the information and asks for his
+// confirmation. If he clicks on the confirm button, tell him
+// “congratulations you successfully sent this form” if he clicks on
+// change information, give him the possibility to change the
+// information, and ask again for his confirmation.
+// */
 
+// // const infoForm = document.querySelector('#info-form')
 
-// function Square(a, b, c, d){
-// this.a = a;
-// this.b = b;
-// this.c = c;
-// this.d = d;
-// }
+// // infoForm.addEventListener('submit', function(e){
+// //     // alert('submit')
+// //     e.preventDefault()
+// //     submitForm()
+// //     console.log('submit')   
+// // })
 
-// const square1 = new Square(20, 20, 20, 20)
+// // function submitForm(){
+// //     console.log('submit')
 
-// console.log(square1.hasOwnProperty('a'))
-
-// Square.prototype.isSquare = function() {
-//     this.a === this.b === this.c === this.d 
-// }
-// // console.log(square1.hasOwnProperty('isSquare'))
-// // console.log(square1.isSquare(20, 20, 20, 20))
-// console.log(square1)
-
-
-
-
-// const square2 = new Square(20, 20, 21, 20)
-
-
-
-// square1.Square.prototype.isSquare = function(){
-//     this.a === this.b === this.c === this.d }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-Instructions
-Create a webpage that has a form (asks the user for its name,
-age, and email address) and when the user clicks submit, open
-a text window that writes all the information and asks for his
-confirmation. If he clicks on the confirm button, tell him
-“congratulations you successfully sent this form” if he clicks on
-change information, give him the possibility to change the
-information, and ask again for his confirmation.
-*/
-
-// const infoForm = document.querySelector('#info-form')
-
-// infoForm.addEventListener('submit', function(e){
-//     // alert('submit')
-//     e.preventDefault()
-//     submitForm()
-//     console.log('submit')   
-// })
-
-// function submitForm(){
-//     console.log('submit')
-
-//     const name = document.querySelector('#name').value
-//     const age = document.querySelector('#age').value
-//     const email = document.querySelector('#email').value
+// //     const name = document.querySelector('#name').value
+// //     const age = document.querySelector('#age').value
+// //     const email = document.querySelector('#email').value
     
-//     const confirmBox = document.createElement('div')
-//     confirmBox.classList.add('confirm-box')
-//     confirmBox.innerHTML = `   
-//         <h2>Are you sure you want to send this form?</h2>
-//         <p>Name: ${name}</p>
-//         <p>Age: ${age}</p>
-//         <p>Email: ${email}</p>
-//         <button id="confirm">Confirm</button>
-//         <button id="change">Change information</button>
-//     `
-//     confirmBox.style.display = 'block'
-//     confirmBox.style.position = 'absolute'
-//     confirmBox.style.top = '20%'
-//     confirmBox.style.left = '20%'
-//     confirmBox.style.background = 'yellow'
-//     confirmBox.style.padding = '20px'
-//     confirmBox.style.border = '1px solid black'
-//     confirmBox.style.borderRadius = '15px'
-//     confirmBox.style.textAlign = 'center'
+// //     const confirmBox = document.createElement('div')
+// //     confirmBox.classList.add('confirm-box')
+// //     confirmBox.innerHTML = `   
+// //         <h2>Are you sure you want to send this form?</h2>
+// //         <p>Name: ${name}</p>
+// //         <p>Age: ${age}</p>
+// //         <p>Email: ${email}</p>
+// //         <button id="confirm">Confirm</button>
+// //         <button id="change">Change information</button>
+// //     `
+// //     confirmBox.style.display = 'block'
+// //     confirmBox.style.position = 'absolute'
+// //     confirmBox.style.top = '20%'
+// //     confirmBox.style.left = '20%'
+// //     confirmBox.style.background = 'yellow'
+// //     confirmBox.style.padding = '20px'
+// //     confirmBox.style.border = '1px solid black'
+// //     confirmBox.style.borderRadius = '15px'
+// //     confirmBox.style.textAlign = 'center'
 
-//     document.body.appendChild(confirmBox)
-// }
-
-
-// const confirm = document.querySelector('#confirm')
-// const change = document.querySelector('#change')
+// //     document.body.appendChild(confirmBox)
+// // }
 
 
-// if (confirm) {
-//     alert('Congratulations you successfully sent this form')
-// } else if (change) {
-//     alert('Change information')
-//     submitForm()
-// }
-// ======================================
+// // const confirm = document.querySelector('#confirm')
+// // const change = document.querySelector('#change')
+
+
+// // if (confirm) {
+// //     alert('Congratulations you successfully sent this form')
+// // } else if (change) {
+// //     alert('Change information')
+// //     submitForm()
+// // }
+// // ======================================
 
 
 
-// to try changing the button hover style
-// manipulating the css variables with javascript
-// FROM STACK OVERFLOW
-// var css = 'table td:hover{ background-color: #00ff00 }';
-// var style = document.createElement('style');
+// // to try changing the button hover style
+// // manipulating the css variables with javascript
+// // FROM STACK OVERFLOW
+// // var css = 'table td:hover{ background-color: #00ff00 }';
+// // var style = document.createElement('style');
 
-// if (style.styleSheet) {
-//     style.styleSheet.cssText = css;
-// } else {
-//     style.appendChild(document.createTextNode(css));
-// }
+// // if (style.styleSheet) {
+// //     style.styleSheet.cssText = css;
+// // } else {
+// //     style.appendChild(document.createTextNode(css));
+// // }
 
-// document.getElementsByTagName('head')[0].appendChild(style);
+// // document.getElementsByTagName('head')[0].appendChild(style);
 
 
-// const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-// const randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-// const input = document.querySelector("input");
-// const message = document.querySelector(".message");
-// const guesses = document.querySelector(".guesses");
-// const endgame = document.querySelector(".endgame");
-// const newGame = document.querySelector("#new-game-btn");
-// const instruction = document.querySelector(".instruction");
+// // const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+// // const randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+// // const input = document.querySelector("input");
+// // const message = document.querySelector(".message");
+// // const guesses = document.querySelector(".guesses");
+// // const endgame = document.querySelector(".endgame");
+// // const newGame = document.querySelector("#new-game-btn");
+// // const instruction = document.querySelector(".instruction");
 
-// const randomColor = () => {
-//     const letters = "0123456789ABCDEF";
-//     let color = "#";
-//     for (let i = 0; i < 6; i++) {
-//         color += letters[Math.floor(Math.random() * 16)];
-//     }
-//     // console.log("color",color);
-//     return color;
-// };
-// let boxShadow = "inset 1px 1px 50px 1p " + randomColor()
-// newGame.style.boxShadow = boxShadow
+// // const randomColor = () => {
+// //     const letters = "0123456789ABCDEF";
+// //     let color = "#";
+// //     for (let i = 0; i < 6; i++) {
+// //         color += letters[Math.floor(Math.random() * 16)];
+// //     }
+// //     // console.log("color",color);
+// //     return color;
+// // };
+// // let boxShadow = "inset 1px 1px 50px 1p " + randomColor()
+// // newGame.style.boxShadow = boxShadow
 
-// const guessedLetters = [];
-// let gameOver = false;
-// console.log("randomLetter: ", randomLetter);
-// message.style.color = "transparent";
+// // const guessedLetters = [];
+// // let gameOver = false;
+// // console.log("randomLetter: ", randomLetter);
+// // message.style.color = "transparent";
 
-// input.addEventListener("keyup", (e) => {
-//     // if (gameOver) return;
-//     if (e.key === "Enter") {
-//         const guess = e.target.value;
-//         if (guess.length !== 1) {
-//         message.textContent = "Please enter a single letter";
-//         message.style.color = "red";
-//         return;
-//         }
-//         if (guessedLetters.includes(guess)) {
-//         message.textContent = "You already guessed that letter";
-//         message.style.color = "red";
-//         return;
-//         }
-//         if (guess === randomLetter) {
-//         message.textContent = "You are correct!";
-//         message.style.color = "lightgreen";
-//         endgame.classList.remove('hidden')
-//         guesses.classList.add('hidden')
-//         instruction.classList.add('hidden')
-//         gameOver = true;
-//         } else {
-//         message.textContent = "You are wrong";
-//         message.style.color = "red";
-//         guessedLetters.push(guess);
-//         guesses.textContent = guessedLetters.join(", ");
-//         }
-//         e.target.value = "";
-//     }
-//     }
-// );
+// // input.addEventListener("keyup", (e) => {
+// //     // if (gameOver) return;
+// //     if (e.key === "Enter") {
+// //         const guess = e.target.value;
+// //         if (guess.length !== 1) {
+// //         message.textContent = "Please enter a single letter";
+// //         message.style.color = "red";
+// //         return;
+// //         }
+// //         if (guessedLetters.includes(guess)) {
+// //         message.textContent = "You already guessed that letter";
+// //         message.style.color = "red";
+// //         return;
+// //         }
+// //         if (guess === randomLetter) {
+// //         message.textContent = "You are correct!";
+// //         message.style.color = "lightgreen";
+// //         endgame.classList.remove('hidden')
+// //         guesses.classList.add('hidden')
+// //         instruction.classList.add('hidden')
+// //         gameOver = true;
+// //         } else {
+// //         message.textContent = "You are wrong";
+// //         message.style.color = "red";
+// //         guessedLetters.push(guess);
+// //         guesses.textContent = guessedLetters.join(", ");
+// //         }
+// //         e.target.value = "";
+// //     }
+// //     }
+// // );
 
-// newGame.addEventListener('click', () => {
-//     window.location.reload()
-// })
+// // newGame.addEventListener('click', () => {
+// //     window.location.reload()
+// // })
 
 
 

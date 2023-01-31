@@ -11,17 +11,18 @@ let week = {
 let today = todate.toLocaleDateString('en-US', week);
 console.log("today", today);
 
-// 2. Current day of the month e.g. 31
+// // 2. Current day of the month e.g. 31
 
 let day = todate.getDate();
 console.log("day", day);
 
-// 3. Current month e.g January
+// // 3. Current month e.g January
 
 let month = todate.toLocaleDateString('en-US', {month:'long'});
 console.log("month", month);
 
 
-// 4. Current Year e.g 2021
+// // 4. Current Year e.g 2021
 let year = todate.getFullYear();
 console.log("year", year);
+
