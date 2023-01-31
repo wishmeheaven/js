@@ -22,7 +22,7 @@ const banana = new Fruit('banana', 'yellow', ['sweet'], 'summer')
 const fruits = [strawberry, grapefruit, lemon, pomegranate, banana]
 
 Fruit.prototype.myFilter = function (filterBy) {
-    console.log('in filter')
+    console.log(`In my filter, filtering ${filterBy}`)
     return fruits.filter((el) => {
         return el.color.includes(filterBy)
     })
@@ -31,7 +31,7 @@ Fruit.prototype.myFilter = function (filterBy) {
 console.log(Fruit.prototype.myFilter('green'))
 
 Fruit.prototype.myFind = function (findBy) {
-    console.log('in find')
+    console.log(`In my find, looking for the first ${findBy} fruit`)
     return fruits.find((el) => {
         return el.color.includes(findBy)
     })
@@ -40,16 +40,15 @@ Fruit.prototype.myFind = function (findBy) {
 console.log(Fruit.prototype.myFind('red'))
 
 Fruit.prototype.myReduce = function (acc, total) {
-    console.log('in reduce')
-
+    console.log('In my reduce,')
     let reduceLetters = fruits.reduce((acc, el) => {
-        console.log(`acc=${acc}, el.name=${el.name}, el.name.length=${el.name.length}`)
+        console.log(`${el.name}'s ${el.name.length} letters summing up into ${acc + el.name.length}`)
         return acc + el.name.length
     }, 0)
     return reduceLetters
 }
 
-console.log(Fruit.prototype.myReduce(fruits))
+Fruit.prototype.myReduce(fruits)
 
 
 
