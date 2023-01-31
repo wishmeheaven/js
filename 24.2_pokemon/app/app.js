@@ -24,9 +24,9 @@ function Pokemon(pokemonName, pokemonType,
     this.attackList = pokemonAttackList;
  }
 
-    const pikachu = new Pokemon(name = "Pikachu", type = "Electric", attackList = ["Thunderbolt", "Quick Attack", "Iron Tail"])
-    const charizard = new Pokemon(name = "Charizard", type = "Fire/Flying", attackList = ["Flame Thrower", "Dragon Claw", "Wing Attack"])
-    const squirtle = new Pokemon(name = "Squirtle", type = "Water", attackList = ["Water Gun", "Bubble Beam", "Withdraw"])
+    const pikachu = new Pokemon("Pikachu", "Electric", ["Thunderbolt", "Quick Attack", "Iron Tail"])
+    const charizard = new Pokemon("Charizard", "Fire/Flying", ["Flame Thrower", "Dragon Claw", "Wing Attack"])
+    const squirtle = new Pokemon("Squirtle", "Water", ["Water Gun", "Bubble Beam", "Withdraw"])
 
     Pokemon.prototype.summon = function(){
         console.log(`I choose you, ${this.name}`)
