@@ -1,5 +1,23 @@
 // 'use strict'
 
+/* 
+=========================================================================
+25.1.
+For me the terminology is confusing enough to makes me out of focus 
+while I'm trying to figure out what's wrong with this code.
+- hero has health and power.
+- getStrength method (which gets no arguments and) return either hero's current power value or power-minus-10 value if his/her health equal or bellow 5.
+- whoIsStronger is a function with one argument - getStrength - which return the hero's power , 
+and compares between my strength and the "incoming"(/parameter's) strength.
+=== so, A) I'm not sure why not calling "myStrength" - power instead, or the hero's power - "strength" instead.
+======= B) Oh, all those words, and only now I realize that the issue is not the terminology.
+The issue is that getStrength() return undefined.
+Conclusion: Don't run ahead like a blind donkey. Read the entire question first,
+And only than, once you understand the task, only than, with your eyes open -
+Start running ahead like a blind donkey.
+*/
+
+
 
 if (displaySS[0] === '0' && displaySS[1] === '0') {
     clock.style.boxShadow = `inset 1px 1px 15px 2px rgb(${randomColor}),

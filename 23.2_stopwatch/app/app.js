@@ -25,28 +25,18 @@ let ss = 0
 let ms = 0
 let interval
 
-function startTimer() {
-    interval = setInterval(() => {
-        ms++
-        if (ms == 100) {
-            ms = 0
-            ss++
-        }
-        if (ss == 60) {
-            ss = 0
-            mm++
-        }
-        if (mm == 60) {
-            mm = 0
-            hh++
-        }
-        stopwatch.innerHTML = `${hh < 10 ? '0' + hh : hh}:${mm < 10 ? '0' + mm : mm}:${ss < 10 ? '0' + ss : ss}:${ms < 10 ? '0' + ms : ms}`
-    }, 10)
-}
+const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
+let timerId;
 
-function stopTimer() {
-    clearInterval(interval)
-}
+startBtn.addEventListener("click", function() {
+  timerId = setInterval(function() {
+    console.log("Timer running...");
+  }, 1000);
+});
 
+stopBtn.addEventListener("click", function() {
+  clearInterval(timerId);
+});
     
 

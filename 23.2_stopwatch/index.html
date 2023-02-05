@@ -32,12 +32,81 @@
             font-family: 'roboto', sans-serif;
             transition: all 2s ease-in-out;
 }
+#start{
+    background-color: #fff;
+    color: #000;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#start:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+#stop{
+    background-color: #fff;
+    color: #000;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#stop:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+#reset{
+    background-color: #fff;
+    color: #000;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#reset:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.random-glow{
+    animation: random-glow 2s ease-in-out infinite;
+}
+
+@keyframes random-glow{
+    0%{
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    50%{
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+
+
     
     </style>
 </head>
   <script src="./app/app.js" defer></script>
 <body>
     <div class="random-glow" id="stopwatch">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
     </div>
 </body>
 </html>
