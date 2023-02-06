@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+            font-family: 'Tahoma', sans-serif;
+        }
+        h1 {          
+            margin-bottom: 1rem;
+        }
+        h2 {            
+            margin-top: 1rem;
+        }
+        button {
+            margin-top: 1rem;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+        button:active {
+            margin-top: 1rem;
+            background-color: #0f7212;
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+    </style>
     <title>Refactor w/ Async Await</title>
 </head>
 <body>
+    <h1 class="joke-title"></h1>
+    <!-- <button class="joke-btn">Click & Laugh</button> -->
+    <h2 class="joke-text"></h2>
 </div>
     <script src="./app/app.js"></script>
 </body>
