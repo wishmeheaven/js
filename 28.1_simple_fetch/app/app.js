@@ -16,6 +16,8 @@ jokeBtn.textContent = 'Click & Laugh'
 document.body.appendChild(jokeBtn)
 
 jokeBtn.addEventListener('click', () => {
+    jokeTitle.innerText = '';
+    jokeText.innerText = '';
     fetch('https://api.jokes.one/jod')
         .then((response) => response.json())
         .then((data) => {
