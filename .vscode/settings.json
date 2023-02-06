@@ -8,10 +8,12 @@
         "lightgreen",
         "miny",
         "Oldboy",
+        "Pesek",
         "pikachu",
         "slicely",
         "squirtle",
-        "todate"
+        "todate",
+        "Zman"
     ],
     "terminal.integrated.fontFamily": "monospace",
     "liveServer.settings.port": 5501
