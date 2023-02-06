@@ -11,19 +11,15 @@ Display to the screen the joke title and the joke itself
 const jokeTitle = document.querySelector('.joke-title')
 const jokeText = document.querySelector('.joke-text')
 const jokeBtn = document.createElement('button')
-
 jokeBtn.textContent = 'Click & Laugh'
-
 document.body.appendChild(jokeBtn)
 
 jokeBtn.addEventListener('click', async () => {
     try {
         const response = await fetch('https://api.jokes.one/jod');
         const data = await response.json();
-        const jokeTitleText = document.createTextNode(data.contents.jokes[0].joke.title);
-        const jokeTextText = document.createTextNode(data.contents.jokes[0].joke.text);
-        jokeTitle.appendChild(jokeTitleText);
-        jokeText.appendChild(jokeTextText);
+        jokeTitle.textContent = data.contents.jokes[0].joke.title;
+        jokeText.textContent = data.contents.jokes[0].joke.text;
     } catch (error) {
         console.log(error);
     }
