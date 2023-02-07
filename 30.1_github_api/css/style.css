@@ -13,14 +13,21 @@ button, input{
   font-family: 'Poppins', sans-serif;
 }
 
-body {
-    width: '100vw';
-    height: '100vh';
+.body {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid #000000;
+    box-shadow: inset 0px 0px 50px 1px #000000 ;
 }
 .container{
     box-shadow: inset 2px 2px 15px 2px #0d0152;
     padding: 2rem;
     background: linear-gradient(140deg, #ff05bc, #3c00ff);
+    width: max-content;
+    height: max-content;
+    margin: 10rem auto;
+    border-radius: 10px;
+
 }
 .form {
     margin: 2rem;
@@ -30,11 +37,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 h2 {
     font-size: 1.8rem;
-    text-shadow: #ffffff 0px -2px 2px;
+    /* text-shadow: #ffffff -1px -1px 1px; */
 }
 
 #gh-username {
@@ -75,13 +83,16 @@ h2 {
     box-shadow: 0px 0px 10px 1px #ffffff;
 }
 #btn:active {
-    color: #010565;
-    font-weight: bold;
-    background-color: #004dd2;
+    /* color: #010565; */
+    /* font-weight: bold; */
+    background-color: #00a2ff;
     box-shadow: 0px 0px 15px 1px #000590,
-    inset 0px 0px 15px 1px #000590 ;
+    inset 0px 0px 15px 2px #000590 ;
 }  
 
+h3 {
+    color: #fff;
+}
 #result {
     display: flex;
     justify-content: center;
@@ -110,7 +121,7 @@ img:hover {
 }
 
 img:active{
-        border: 2px solid #004dd2;
-        box-shadow: 0px 0px 25px 2px #004dd2;
+        border: 2px solid #007bc2;
+        box-shadow: 0px 0px 25px 2px #00a2ff;
 }
 

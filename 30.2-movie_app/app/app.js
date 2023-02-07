@@ -23,12 +23,57 @@ ratings
 
 document.getElementById('btn').addEventListener('click',showMovieInfo)
 
-function showMovieInfo() {
+const userInput = document.getElementById('user-input')
 
-    const 
-    fetch.url("http://www.omdbapi.com/?apikey=[a8100ac9-60e2-48c3-963b-2418e5d2ac05]&")
-    .then
 
-    let movieName = document.getElementById('movie-name').value
+// window.onload = function () {
+//     userInput.focus();
+// }
 
+userInput.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        showMovieInfo()
+    }
+})
+
+async function showMovieInfo() {
+    const url = `http://www.omdbapi.com/?apikey=584740cb&t=${userInput.value}`
+    // const url = "http://www.omdbapi.com/?apikey=584740cb"
+    try {
+    const response = await fetch(url)
+    const movieCard = document.getElementById('result')
+        if (movieCard.value === undefined) {
+            console.log(movieCard.value===undefined)
+            const randomEmoji = Math.floor(Math.random()*26)
+            movieCard.innerHTML = `
+            <h3>
+                Movie not found <span>
+                <img id="smily" src="../assets/img/smily${randomEmoji}.jpg"/>
+                </span>
+            </h3>
+            `
+    } else {
+            const data = await response.json()
+        console.log(data)
+        //// style="width:12rem; height:12rem; cursor: pointer;"
+        userInput.value = ''
+        movieCard.innerHTML = `
+                <img id="movieImg" src="${data.Poster}"/> </br>                
+                <p id="movie-title">${data.Title ? data.Title : ""} (${data.Year})</p>
+                <p id="movie-genre">${data.Genre ? data.Genre : ""}</p>
+                <p id="movie-plot">${data.Plot ? data.Plot : ""}</p>
+                <p id="movie-director">${data.Director ? data.Director : ""}</p>
+                <p id="movie-actors">${data.Actors ? data.Actors : ""}</p>
+                <p id="movie-rating">Rating : ${data.imdbRating ? data.imdbRating : ""}</p>
+                `
+        movieCard.querySelector('img').addEventListener('click', function () {
+            window.open(`https://www.imdb.com/title/${data.imdbID}`, '_blank')
+        })
+    }   
+    } catch(err) {
+        console.log("he2", response)
+        movieCard.innerHTML = `<p>Movie not found :(</p>`
+        console.log(err)
+    }
 }
+

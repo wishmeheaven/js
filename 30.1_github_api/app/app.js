@@ -15,13 +15,15 @@ that user Github profile page.
 
 document.getElementById('btn').addEventListener('click',showGithubUserProfile)
 const userInput = document.getElementById('gh-username')
+const githubCard = document.getElementById('result')
 
 window.onload = function() {
     userInput.focus()
 }
 
-userInput.addEventListener('keyup', function(event) {
+userInput.addEventListener('keypress', function(event) {
     if ( event.key === 'Enter' ) {
+        githubCard.innerText = ""
         userInput.innerText = userInput.value
         showGithubUserProfile()
     }
@@ -29,9 +31,6 @@ userInput.addEventListener('keyup', function(event) {
 
     
 async function showGithubUserProfile() {
-
-    const githubCard = document.getElementById('result')
-
     const url = 'https://api.github.com/users/' + userInput.value
     try {
         const response = await fetch(url)    
