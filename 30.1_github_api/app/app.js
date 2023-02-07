@@ -15,9 +15,9 @@ that user Github profile page.
 document.getElementById('btn').addEventListener('click',showGithubUserProfile)
 
 function showGithubUserProfile(){
-    
-    let username = document.getElementById('gh-username').value
 
+    let username = document.getElementById('gh-username').value
+    
     let url = 'https://api.github.com/users/' + username
     fetch(url).then(resolve => resolve.json())
     .then(data => {
@@ -33,6 +33,7 @@ function showGithubUserProfile(){
             style="width:100%">
             <p>${data.name ? data.name : ""} (${data.login})</p>
             <p>${data.bio ? data.bio : ""}</p>
+            <p>Public Repos: ${data.public_repos}</p>
             `
         }
         
