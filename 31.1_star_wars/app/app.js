@@ -1,48 +1,56 @@
 'use strict'
 document.getElementById('btn').addEventListener('click', showStarWarsCharacters)
-
-async function showStarWarsCharacters(){
+async function showStarWarsCharacters() {
     const characterInformation = [];
 
-    fetch('https://swapi.dev/api/people')
-        .then(response => response.json())
-        .then(data => {
-            data.results.forEach((result, index) => {
-                if (index < 10) {
-                    let character = {
-                        name: result.name,
-                        height: result.height,
-                        hair: result.hair_color,
-                        planet: {
-                            name: result.homeworld.name,
-                            population: result.homeworld.population
-                        }
-                    };
-                    characterInformation.push(character);
-                }
-            });
+    const data = await fetch("https://swapi.dev/api/people")
+        .then((response) => response.json())
+        .catch((error) => console.error("Error fetching data:", error));
 
-            characterInformation.forEach(character => {
-                let name = document.createElement('p');
-                name.innerText = 'Name: ' + character.name;
+    for (const result of data.results) {
+        let character = {
+            name: result.name,
+            height: result.height,
+            hair: result.hair_color,
+            planet: {
+                name: "",
+                population: "",
+            },
+        };
 
-                let height = document.createElement('p');
-                height.innerText = 'Height: ' + character.height;
+        const planetData = await fetch(result.homeworld)
+            .then((response) => response.json())
+            .catch((error) => console.error("Error fetching planet data:", error));
 
-                let hair = document.createElement('p');
-                hair.innerText = 'Hair Color: ' + character.hair;
+        character.planet.name = planetData.name;
+        character.planet.population = planetData.population;
+        characterInformation.push(character);
+    }
 
-                let planet = document.createElement('p');
-                planet.innerText = 'Planet: ' + character.planet.name;
+    const displayContainer = document.createElement("div");
+    displayContainer.setAttribute("id", "display-container");
+    document.body.appendChild(displayContainer);
 
-                let population = document.createElement('p');
-                population.innerText = 'Population: ' + character.planet.population;
+    for (const character of characterInformation) {
+        const name = document.createElement("p");
+        name.innerText = `Name: ${character.name}`;
 
-                document.body.appendChild(name);
-                document.body.appendChild(height);
-                document.body.appendChild(hair);
-                document.body.appendChild(planet);
-                document.body.appendChild(population);
-            });
-        });
+        const height = document.createElement("p");
+        height.innerText = `Height: ${character.height}`;
+
+        const hair = document.createElement("p");
+        hair.innerText = `Hair Color: ${character.hair}`;
+
+        const planet = document.createElement("p");
+        planet.innerText = `Planet: ${character.planet.name}`;
+
+        const population = document.createElement("p");
+        population.innerText = `Population: ${character.planet.population}`;
+
+        displayContainer.appendChild(name);
+        displayContainer.appendChild(height);
+        displayContainer.appendChild(hair);
+        displayContainer.appendChild(planet);
+        displayContainer.appendChild(population);
+    }
 }
