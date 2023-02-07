@@ -12,33 +12,50 @@ When a user clicks on the card it will open a new page to
 that user Github profile page.
 */
 
+
 document.getElementById('btn').addEventListener('click',showGithubUserProfile)
+const userInput = document.getElementById('gh-username')
 
-function showGithubUserProfile(){
+window.onload = function() {
+    userInput.focus()
+}
 
-    let username = document.getElementById('gh-username').value
+userInput.addEventListener('keyup', function(event) {
+    if ( event.key === 'Enter' ) {
+        userInput.innerText = userInput.value
+        showGithubUserProfile()
+    }
+})
+
     
-    let url = 'https://api.github.com/users/' + username
-    fetch(url).then(resolve => resolve.json())
-    .then(data => {
-        if(data.message){
-            console.log(data.message)
-            document.getElementById('result').innerHTML = `
-            <h3>Profile Not Found</h3>
-            `            
-        } else {
-            console.log(data)
-            document.getElementById('result').innerHTML = `
-            <img src="${data.avatar_url}"
-            style="width:100%">
-            <p>${data.name ? data.name : ""} (${data.login})</p>
-            <p>${data.bio ? data.bio : ""}</p>
-            <p>Public Repos: ${data.public_repos}</p>
-            `
-        }
-        
-    }).catch(error => {
-        console.log(error)
-    })
+async function showGithubUserProfile() {
+
+    const githubCard = document.getElementById('result')
+
+    const url = 'https://api.github.com/users/' + userInput.value
+    try {
+        const response = await fetch(url)    
+        const data = await response.json()     
+            if(data.message) {
+                console.log(data.message)
+                githubCard.innerHTML = `
+                <h3>Profile Not Found</h3>
+                `            
+            } else {        
+                userInput.value = ''
+                githubCard.innerHTML = `
+                <img src="${data.avatar_url}"
+                style="width:12rem; height:12rem; cursor: pointer;"
+                <p>${data.name ? data.name : ""} (${data.login})</p>
+                <p>${data.bio ? data.bio : ""}</p>
+                <p>Public Repos: ${data.public_repos}</p>
+                `
+                githubCard.querySelector('img').addEventListener('click', function() {
+                    window.open(`https://github.com/${data.login}`, '_blank')
+                })
+            }
+    } catch (err) {
+        console.error(err)
+    }  
 }
 
