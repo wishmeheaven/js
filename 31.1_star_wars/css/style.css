@@ -1,0 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #0d0152;
+
+}
+
+button, input{
+  font-family: 'Poppins', sans-serif;
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid #000000;
+    box-shadow: inset 0px 0px 50px 1px #000000;
+    padding: 5rem;
+       display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.container{
+    box-shadow: inset 2px 2px 15px 2px #0d0152;
+    padding: 2rem;
+    background: linear-gradient(140deg, #ff05bc, #3c00ff);
+    width: max-content;
+    height: max-content;
+    margin: 10rem auto;
+    border-radius: 10px;
+}
+
+
+#btn {  
+    padding: 0 1rem;
+    width: max-content;
+    height: 2.8rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #00137e;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#btn:focus, #btn:hover{
+    outline: none;
+    background-color: #2306c5;
+    box-shadow: 0px 0px 10px 1px #ffffff;
+}
+#btn:active {
+    /* color: #010565; */
+    /* font-weight: bold; */
+    background-color: #00a2ff;
+    box-shadow: 0px 0px 15px 1px #000590,
+    inset 0px 0px 15px 2px #000590 ;
+}  

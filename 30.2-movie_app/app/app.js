@@ -26,9 +26,9 @@ document.getElementById('btn').addEventListener('click',showMovieInfo)
 const userInput = document.getElementById('user-input')
 
 
-// window.onload = function () {
-//     userInput.focus();
-// }
+window.onload = function () {
+    userInput.focus();
+}
 
 userInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
@@ -42,17 +42,18 @@ async function showMovieInfo() {
     try {
     const response = await fetch(url)
     const movieCard = document.getElementById('result')
-        if (movieCard.value === undefined) {
-            console.log(movieCard.value===undefined)
-            const randomEmoji = Math.floor(Math.random()*26)
+        if (movieCard.src === undefined) {
+            const randomEmoji = Math.ceil(Math.random()*26)
             movieCard.innerHTML = `
             <h3>
                 Movie not found <span>
-                <img id="smily" src="../assets/img/smily${randomEmoji}.jpg"/>
+                  <img id="smily" src="./assets/img/smily${randomEmoji}.jpg" style="width: 5rem; height:5rems;"/>
                 </span>
             </h3>
             `
     } else {
+            console.log("userInout", userInput.value)
+            console.log("movieCard", movieCard)
             const data = await response.json()
         console.log(data)
         //// style="width:12rem; height:12rem; cursor: pointer;"
@@ -71,8 +72,6 @@ async function showMovieInfo() {
         })
     }   
     } catch(err) {
-        console.log("he2", response)
-        movieCard.innerHTML = `<p>Movie not found :(</p>`
         console.log(err)
     }
 }
