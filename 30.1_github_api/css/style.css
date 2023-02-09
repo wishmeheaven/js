@@ -13,12 +13,14 @@ button, input{
   font-family: 'Poppins', sans-serif;
 }
 
-.body {
+body {
     width: 100vw;
     height: 100vh;
+    background-color: #12007a;
     border: 1px solid #000000;
-    box-shadow: inset 0px 0px 50px 1px #000000 ;
+    box-shadow: inset 0px 0px 200px 1px #000000 ;
 }
+
 .container{
     box-shadow: inset 2px 2px 15px 2px #0d0152;
     padding: 2rem;
@@ -29,6 +31,7 @@ button, input{
     border-radius: 10px;
 
 }
+
 .form {
     margin: 2rem;
 }
